@@ -66,8 +66,8 @@ def reshenie3():
     if Dis == 0:
         return redirect(url_for('reshenie2'))
     if Dis>0:
-        Resh1:float = -K2+math.sqrt(Dis)/(2*K1)
-        Resh2:float = -K2-math.sqrt(Dis)/(2 * K1)
+        Resh1:float = (-K2+math.sqrt(Dis))/(2*K1)
+        Resh2:float = (-K2-math.sqrt(Dis))/(2 * K1)
     return render_template('4step.html', Resh1=Resh1, Resh2=Resh2)
 
 
