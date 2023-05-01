@@ -57,7 +57,7 @@ def reshenie2():
         return redirect(url_for('reshenie3'))
     if Dis == 0:
         Resh:float = -K2/(2*K1)
-    return render_template('3step.html', Resh=Resh)
+    return render_template('3step.html', Resh=Resh, K2=K2, K1=K1)
 
 @app.route('/reshenie3', methods=['GET', 'POST'])
 def reshenie3():
@@ -66,9 +66,9 @@ def reshenie3():
     if Dis == 0:
         return redirect(url_for('reshenie2'))
     if Dis>0:
-        Resh1:float = (-K2+math.sqrt(Dis))/(2*K1)
+        Resh1:float = (-K2+math.sqrt(Dis))/(2 * K1)
         Resh2:float = (-K2-math.sqrt(Dis))/(2 * K1)
-    return render_template('4step.html', Resh1=Resh1, Resh2=Resh2)
+    return render_template('4step.html', Resh1=Resh1, Resh2=Resh2, K2=K2, sDis=int(math.sqrt(Dis)), K1=K1)
 
 
 
